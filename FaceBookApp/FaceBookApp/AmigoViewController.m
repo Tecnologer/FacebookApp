@@ -7,6 +7,7 @@
 //
 
 #import "AmigoViewController.h"
+#import "amigoUICollectionViewCell.h"
 
 @interface AmigoViewController ()
 
@@ -49,17 +50,40 @@
 
 #pragma mark-Collection View Controller
 
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 100;
-}
-
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return [items count];
 }
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    amigoUICollectionViewCell *amigo=[collectionView dequeueReusableCellWithReuseIdentifier:@"amigoCell" forIndexPath:indexPath];
+    
+    NSMutableDictionary *obj=[items objectAtIndex:indexPath.row];
+    
+    amigo.name.text=[obj objectForKey:@"name"];
+    amigo.check.image=([[obj objectForKey: @"check"] isEqualToString:@"off"])?[UIImage imageNamed:@"checkOff.png"]:[UIImage imageNamed:@"check.png"];
+    amigo.photo.image=[UIImage imageNamed:@"face.png"];
+    return amigo;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSMutableDictionary *amigo=[items objectAtIndex:indexPath.row];
+    
+    if([[amigo objectForKey:@"check"] isEqualToString:@"off"]){
+        [amigo setValue:@"on" forKey:@"check"];
+    }
+    else{
+        [amigo setValue:@"off" forKey:@"check"];
+    }
+    
+    [collectionView reloadData];
+                                
+}
+
 
 /*
 #pragma mark - Navigation
