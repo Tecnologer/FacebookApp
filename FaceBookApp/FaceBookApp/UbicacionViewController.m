@@ -39,7 +39,25 @@
     //que la ubicacion este activada
     map.myLocationEnabled = YES;
     //asigno el mapa al view controler
+    
+    GMSMarker *marker=[[GMSMarker alloc] init];
+    marker.position=CLLocationCoordinate2DMake(24.7889949,-107.3986286);
+    marker.title=@"Instito Tecnologico de Culichican";
+    marker.snippet=@"Aqui en el tec en el curso de iOS";
+    
+    marker.map=map;
     self.view = map;
+}
+
+-(IBAction)cambiarVista:(id)sender{
+    if([map mapType] == kGMSTypeHybrid){
+        self.navigationItem.rightBarButtonItem.title=@"Vista Satélite";
+        map.mapType=kGMSTypeNormal;
+    }
+    else{
+        self.navigationItem.rightBarButtonItem.title=@"Vista normal";
+        map.mapType=kGMSTypeHybrid;
+    }
 }
 
 - (void)didReceiveMemoryWarning

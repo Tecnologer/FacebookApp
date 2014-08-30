@@ -134,6 +134,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Vks-1b-Gc3" kind="push" id="nGw-S1-aGS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -159,7 +162,7 @@
             </objects>
             <point key="canvasLocation" x="-2500" y="-2874"/>
         </scene>
-        <!--Ubicacion View Controller-->
+        <!--Ubicacion View Controller - Mapa-->
         <scene sceneID="5jl-f9-m6k">
             <objects>
                 <viewController storyboardIdentifier="ubicacionView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hhb-ku-9y3" customClass="UbicacionViewController" sceneMemberID="viewController">
@@ -178,11 +181,75 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3kL-Hz-L3K"/>
+                    <navigationItem key="navigationItem" title="Mapa" id="3kL-Hz-L3K">
+                        <barButtonItem key="rightBarButtonItem" title="Vista Satélite" id="Tno-PE-0sF">
+                            <connections>
+                                <action selector="cambiarVista:" destination="Hhb-ku-9y3" id="KfA-SD-8Gz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s55-Gc-sy7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1902" y="-2874"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="9Fm-5E-Hsv">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="Vks-1b-Gc3" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="lyY-Tu-XJX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nge-fX-NXh">
+                            <size key="itemSize" width="102" height="103"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZYY-62-Zcc" customClass="amigoUICollectionViewCell">
+                                <rect key="frame" x="0.0" y="64" width="102" height="103"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="102" height="103"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rw3-l4-20s">
+                                            <rect key="frame" x="20" y="82" width="62" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="ATt-Qy-TVI">
+                                            <rect key="frame" x="21" y="14" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="anP-fo-Q97">
+                                            <rect key="frame" x="56" y="14" width="25" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="check" destination="anP-fo-Q97" id="48e-1Y-GkF"/>
+                                    <outlet property="name" destination="rw3-l4-20s" id="P50-iS-enF"/>
+                                    <outlet property="photo" destination="ATt-Qy-TVI" id="BKb-ge-d1U"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Vks-1b-Gc3" id="kbs-Jc-Gr2"/>
+                            <outlet property="delegate" destination="Vks-1b-Gc3" id="8Wg-Fd-wP7"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="Dso-2e-LF2"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDf-SV-FsA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1902" y="-2172"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FB9-0y-Q9d">
@@ -291,6 +358,11 @@
             <point key="canvasLocation" x="-3034" y="-3800"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="check" width="128" height="128"/>
+        <image name="user" width="128" height="128"/>
+    </resources>
+    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

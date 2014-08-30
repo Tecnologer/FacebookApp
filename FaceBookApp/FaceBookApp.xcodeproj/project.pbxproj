@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B389C47E19B2543300B57E1D /* amigoUICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B389C47D19B2543300B57E1D /* amigoUICollectionViewCell.m */; };
+		B389C48119B2556400B57E1D /* AmigoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B389C48019B2556400B57E1D /* AmigoViewController.m */; };
 		B3F19C6319B22A21001FDE45 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C6219B22A21001FDE45 /* GoogleMaps.framework */; };
 		B3F19C6519B22B1F001FDE45 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3F19C6419B22B1F001FDE45 /* GoogleMaps.bundle */; };
 		B3F19C6719B22BAC001FDE45 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C6619B22BAC001FDE45 /* MapKit.framework */; };
@@ -53,6 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B389C47C19B2543300B57E1D /* amigoUICollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amigoUICollectionViewCell.h; sourceTree = "<group>"; };
+		B389C47D19B2543300B57E1D /* amigoUICollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amigoUICollectionViewCell.m; sourceTree = "<group>"; };
+		B389C47F19B2556400B57E1D /* AmigoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmigoViewController.h; sourceTree = "<group>"; };
+		B389C48019B2556400B57E1D /* AmigoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmigoViewController.m; sourceTree = "<group>"; };
 		B3F19C6219B22A21001FDE45 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		B3F19C6419B22B1F001FDE45 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		B3F19C6619B22BAC001FDE45 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -196,6 +202,10 @@
 				D1D7FDDA19A9090500C39C5D /* PublicacionTableViewController.m */,
 				B3F19C8019B233D0001FDE45 /* UbicacionViewController.h */,
 				B3F19C8119B233D0001FDE45 /* UbicacionViewController.m */,
+				B389C47C19B2543300B57E1D /* amigoUICollectionViewCell.h */,
+				B389C47D19B2543300B57E1D /* amigoUICollectionViewCell.m */,
+				B389C47F19B2556400B57E1D /* AmigoViewController.h */,
+				B389C48019B2556400B57E1D /* AmigoViewController.m */,
 			);
 			path = FaceBookApp;
 			sourceTree = "<group>";
@@ -339,6 +349,8 @@
 				D1F88BF5199FE45200FB735E /* DetallePublicacionTableViewController.m in Sources */,
 				D103ED94199FB23E00E6FB6A /* main.m in Sources */,
 				D103EDC4199FC17400E6FB6A /* TimeLineTableViewController.m in Sources */,
+				B389C48119B2556400B57E1D /* AmigoViewController.m in Sources */,
+				B389C47E19B2543300B57E1D /* amigoUICollectionViewCell.m in Sources */,
 				B3F19C8219B233D0001FDE45 /* UbicacionViewController.m in Sources */,
 				D1D7FDDB19A9090500C39C5D /* PublicacionTableViewController.m in Sources */,
 			);
