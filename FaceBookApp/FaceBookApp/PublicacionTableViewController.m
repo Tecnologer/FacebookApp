@@ -30,7 +30,7 @@
     UITapGestureRecognizer *tab;
     tab = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cerrarTeclado)];
     
-    [self.view addGestureRecognizer:tab];
+    //[self.view addGestureRecognizer:tab];
     
     self.caracteres.text=[NSString stringWithFormat:@"%d",CARACTERES];
     //Con esta linea de codigo nuestro componente grafico ya esta siendo reconocido por una clase.

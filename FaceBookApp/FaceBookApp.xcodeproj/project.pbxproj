@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3F19C6319B22A21001FDE45 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C6219B22A21001FDE45 /* GoogleMaps.framework */; };
+		B3F19C6519B22B1F001FDE45 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3F19C6419B22B1F001FDE45 /* GoogleMaps.bundle */; };
+		B3F19C6719B22BAC001FDE45 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C6619B22BAC001FDE45 /* MapKit.framework */; };
+		B3F19C6919B22BFD001FDE45 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C6819B22BFD001FDE45 /* AVFoundation.framework */; };
+		B3F19C6B19B22C0A001FDE45 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C6A19B22C0A001FDE45 /* CoreData.framework */; };
+		B3F19C6D19B22C16001FDE45 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C6C19B22C16001FDE45 /* CoreLocation.framework */; };
+		B3F19C6F19B22C20001FDE45 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C6E19B22C20001FDE45 /* CoreText.framework */; };
+		B3F19C7119B22C2B001FDE45 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C7019B22C2A001FDE45 /* GLKit.framework */; };
+		B3F19C7319B22C35001FDE45 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C7219B22C35001FDE45 /* ImageIO.framework */; };
+		B3F19C7519B22C3E001FDE45 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C7419B22C3E001FDE45 /* libc++.dylib */; };
+		B3F19C7719B22C4B001FDE45 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C7619B22C4B001FDE45 /* libicucore.dylib */; };
+		B3F19C7919B22C54001FDE45 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C7819B22C54001FDE45 /* libz.dylib */; };
+		B3F19C7B19B22C5C001FDE45 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C7A19B22C5C001FDE45 /* OpenGLES.framework */; };
+		B3F19C7D19B22C66001FDE45 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C7C19B22C66001FDE45 /* QuartzCore.framework */; };
+		B3F19C7F19B22C6D001FDE45 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C7E19B22C6D001FDE45 /* SystemConfiguration.framework */; };
+		B3F19C8219B233D0001FDE45 /* UbicacionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F19C8119B233D0001FDE45 /* UbicacionViewController.m */; };
 		D103ED88199FB23E00E6FB6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D103ED87199FB23E00E6FB6A /* Foundation.framework */; };
 		D103ED8A199FB23E00E6FB6A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D103ED89199FB23E00E6FB6A /* CoreGraphics.framework */; };
 		D103ED8C199FB23E00E6FB6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D103ED8B199FB23E00E6FB6A /* UIKit.framework */; };
@@ -37,6 +53,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B3F19C6219B22A21001FDE45 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		B3F19C6419B22B1F001FDE45 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		B3F19C6619B22BAC001FDE45 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B3F19C6819B22BFD001FDE45 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B3F19C6A19B22C0A001FDE45 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B3F19C6C19B22C16001FDE45 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B3F19C6E19B22C20001FDE45 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		B3F19C7019B22C2A001FDE45 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		B3F19C7219B22C35001FDE45 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		B3F19C7419B22C3E001FDE45 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		B3F19C7619B22C4B001FDE45 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		B3F19C7819B22C54001FDE45 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		B3F19C7A19B22C5C001FDE45 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		B3F19C7C19B22C66001FDE45 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B3F19C7E19B22C6D001FDE45 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B3F19C8019B233D0001FDE45 /* UbicacionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UbicacionViewController.h; sourceTree = "<group>"; };
+		B3F19C8119B233D0001FDE45 /* UbicacionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UbicacionViewController.m; sourceTree = "<group>"; };
 		D103ED84199FB23E00E6FB6A /* FaceBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D103ED87199FB23E00E6FB6A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D103ED89199FB23E00E6FB6A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,8 +101,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F19C7F19B22C6D001FDE45 /* SystemConfiguration.framework in Frameworks */,
+				B3F19C7D19B22C66001FDE45 /* QuartzCore.framework in Frameworks */,
+				B3F19C7B19B22C5C001FDE45 /* OpenGLES.framework in Frameworks */,
+				B3F19C7919B22C54001FDE45 /* libz.dylib in Frameworks */,
+				B3F19C7719B22C4B001FDE45 /* libicucore.dylib in Frameworks */,
+				B3F19C7519B22C3E001FDE45 /* libc++.dylib in Frameworks */,
+				B3F19C7319B22C35001FDE45 /* ImageIO.framework in Frameworks */,
+				B3F19C7119B22C2B001FDE45 /* GLKit.framework in Frameworks */,
+				B3F19C6F19B22C20001FDE45 /* CoreText.framework in Frameworks */,
+				B3F19C6D19B22C16001FDE45 /* CoreLocation.framework in Frameworks */,
+				B3F19C6B19B22C0A001FDE45 /* CoreData.framework in Frameworks */,
+				B3F19C6919B22BFD001FDE45 /* AVFoundation.framework in Frameworks */,
 				D103ED8A199FB23E00E6FB6A /* CoreGraphics.framework in Frameworks */,
 				D103ED8C199FB23E00E6FB6A /* UIKit.framework in Frameworks */,
+				B3F19C6719B22BAC001FDE45 /* MapKit.framework in Frameworks */,
+				B3F19C6319B22A21001FDE45 /* GoogleMaps.framework in Frameworks */,
 				D103ED88199FB23E00E6FB6A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +156,21 @@
 		D103ED86199FB23E00E6FB6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3F19C7E19B22C6D001FDE45 /* SystemConfiguration.framework */,
+				B3F19C7C19B22C66001FDE45 /* QuartzCore.framework */,
+				B3F19C7A19B22C5C001FDE45 /* OpenGLES.framework */,
+				B3F19C7819B22C54001FDE45 /* libz.dylib */,
+				B3F19C7619B22C4B001FDE45 /* libicucore.dylib */,
+				B3F19C7419B22C3E001FDE45 /* libc++.dylib */,
+				B3F19C7219B22C35001FDE45 /* ImageIO.framework */,
+				B3F19C7019B22C2A001FDE45 /* GLKit.framework */,
+				B3F19C6E19B22C20001FDE45 /* CoreText.framework */,
+				B3F19C6C19B22C16001FDE45 /* CoreLocation.framework */,
+				B3F19C6A19B22C0A001FDE45 /* CoreData.framework */,
+				B3F19C6819B22BFD001FDE45 /* AVFoundation.framework */,
+				B3F19C6619B22BAC001FDE45 /* MapKit.framework */,
+				B3F19C6419B22B1F001FDE45 /* GoogleMaps.bundle */,
+				B3F19C6219B22A21001FDE45 /* GoogleMaps.framework */,
 				D103ED87199FB23E00E6FB6A /* Foundation.framework */,
 				D103ED89199FB23E00E6FB6A /* CoreGraphics.framework */,
 				D103ED8B199FB23E00E6FB6A /* UIKit.framework */,
@@ -132,6 +194,8 @@
 				D1F88BF4199FE45200FB735E /* DetallePublicacionTableViewController.m */,
 				D1D7FDD919A9090500C39C5D /* PublicacionTableViewController.h */,
 				D1D7FDDA19A9090500C39C5D /* PublicacionTableViewController.m */,
+				B3F19C8019B233D0001FDE45 /* UbicacionViewController.h */,
+				B3F19C8119B233D0001FDE45 /* UbicacionViewController.m */,
 			);
 			path = FaceBookApp;
 			sourceTree = "<group>";
@@ -212,6 +276,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
+					D103ED83199FB23E00E6FB6A = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					D103EDA7199FB23E00E6FB6A = {
 						TestTargetID = D103ED83199FB23E00E6FB6A;
 					};
@@ -245,6 +316,7 @@
 				D103EDA3199FB23E00E6FB6A /* Images.xcassets in Resources */,
 				D103ED9B199FB23E00E6FB6A /* Main_iPhone.storyboard in Resources */,
 				D103ED92199FB23E00E6FB6A /* InfoPlist.strings in Resources */,
+				B3F19C6519B22B1F001FDE45 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +339,7 @@
 				D1F88BF5199FE45200FB735E /* DetallePublicacionTableViewController.m in Sources */,
 				D103ED94199FB23E00E6FB6A /* main.m in Sources */,
 				D103EDC4199FC17400E6FB6A /* TimeLineTableViewController.m in Sources */,
+				B3F19C8219B233D0001FDE45 /* UbicacionViewController.m in Sources */,
 				D1D7FDDB19A9090500C39C5D /* PublicacionTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,9 +475,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FaceBookApp/FaceBookApp-Prefix.pch";
 				INFOPLIST_FILE = "FaceBookApp/FaceBookApp-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -415,9 +493,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FaceBookApp/FaceBookApp-Prefix.pch";
 				INFOPLIST_FILE = "FaceBookApp/FaceBookApp-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

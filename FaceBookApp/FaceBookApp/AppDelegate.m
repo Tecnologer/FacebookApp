@@ -7,11 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import <GoogleMaps/GoogleMaps.h>
+
+//si funciona 😍
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [GMSServices provideAPIKey:@"AIzaSyDp0X0ydSYxRcOG56y-3KLEDcvSXORN7Vc"];
     
     NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
     
