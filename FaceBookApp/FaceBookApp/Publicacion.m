@@ -10,6 +10,7 @@
 
 @implementation Publicacion
 
+@dynamic objectId;
 @dynamic mensaje;
 @dynamic autor;
 @dynamic latitud;

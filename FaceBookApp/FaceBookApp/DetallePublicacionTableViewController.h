@@ -20,6 +20,6 @@
 //Recibe un elemento que lo acciona.
 - (IBAction)cerrar:(UIBarButtonItem *)sender;
 
-
+-(IBAction)editarPublicacion:(id)sender;
 
 @end

@@ -332,7 +332,13 @@
                             <outlet property="delegate" destination="c8G-yf-qRb" id="LLh-ZY-aYS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Publicacion" id="P0T-xl-AXe"/>
+                    <navigationItem key="navigationItem" title="Publicacion" id="P0T-xl-AXe">
+                        <barButtonItem key="rightBarButtonItem" title="Editar" id="rqO-n3-JnX">
+                            <connections>
+                                <action selector="editarPublicacion:" destination="c8G-yf-qRb" id="jGl-zp-Krh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="lblAutor" destination="yQc-rs-5bO" id="8o4-cw-6XC"/>
                         <outlet property="textMensaje" destination="OIr-9T-0fp" id="RFu-R3-ywd"/>

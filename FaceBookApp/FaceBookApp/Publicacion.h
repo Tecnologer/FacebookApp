@@ -10,6 +10,7 @@
 
 @interface Publicacion : NSManagedObject
 
+@property (assign,nonatomic) int objectId;
 @property (strong, nonatomic) NSString *mensaje;
 @property (strong, nonatomic) NSString *autor;
 @property (strong, nonatomic) NSString *latitud;

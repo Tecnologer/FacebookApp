@@ -5,8 +5,9 @@
         <attribute name="latitud" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="longitud" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mensaje" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Publicaciones" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Publicaciones" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

@@ -7,12 +7,16 @@
 //
 
 #import "DetallePublicacionTableViewController.h"
+#import "ObjectDataMaper.h"
 
 @interface DetallePublicacionTableViewController ()
 
 @end
 
-@implementation DetallePublicacionTableViewController
+@implementation DetallePublicacionTableViewController{
+    BOOL editando;
+    ObjectDataMaper *odm;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -35,6 +39,14 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    odm=[[ObjectDataMaper alloc] init];
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    editando=NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,6 +91,26 @@
     [self dismissViewControllerAnimated: YES completion:nil];
 }
 
+-(IBAction)editarPublicacion:(id)sender{
+    if(editando){
+        editando=NO;
+        self.navigationItem.rightBarButtonItem.title=@"Editar";
+        
+        if(![odm editarPublicacion:self.publicacion]){
+            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"No se actualizo" delegate: nil cancelButtonTitle: @"OK" otherButtonTitles:nil,nil];
+            [alert show];
+        }
+        else
+            [self.tableView reloadData];
+        
+    }
+    else{
+        editando=YES;
+        self.navigationItem.rightBarButtonItem.title=@"Guardar";
+    }
+    
+    [self.textMensaje setEditable:editando];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
