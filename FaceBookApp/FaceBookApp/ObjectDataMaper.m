@@ -34,5 +34,35 @@
     return YES;
 }
 
+-(NSMutableArray *)obtenerPublicaciones{
+    NSError *error;
+    
+    self.request=[[NSFetchRequest alloc] init];
+    self.appDelegate=[[UIApplication sharedApplication] delegate];
+    self.context=[self.appDelegate managedObjectContext];
+    
+    [self.request setEntity:[NSEntityDescription entityForName:@"Publicaciones" inManagedObjectContext:self.context]];
+    
+    NSMutableArray *result=[[NSMutableArray alloc] init];
+    NSArray *pubs=[self.context executeFetchRequest:self.request error:&error];
+    
+    if(error!=nil)
+        return result;
+    
+    
+    NSDictionary *obj;
+    for (Publicacion *pub in pubs) {
+        obj=@{
+                @"mensaje":pub.mensaje,
+                @"autor":pub.autor,
+                @"latitud":[NSString stringWithFormat:@"%f", pub.latitud],
+                @"longitud":[NSString stringWithFormat:@"%f", pub.longitud]
+                };
+        
+        [result addObject:obj];
+    }
+    
+    return result;
+}
 
 @end

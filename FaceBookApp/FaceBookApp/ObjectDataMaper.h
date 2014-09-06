@@ -19,4 +19,6 @@
 
 -(BOOL)guardarPublicacion:(NSDictionary *)publicacion;
 
+-(NSMutableArray *)obtenerPublicaciones;
+
 @end
