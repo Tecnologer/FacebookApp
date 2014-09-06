@@ -7,13 +7,19 @@
 //
 
 #import "PublicacionTableViewController.h"
+#import "ObjectDataMaper.h"
+
 #define CARACTERES 250
+
 
 @interface PublicacionTableViewController ()
 
 @end
 
-@implementation PublicacionTableViewController
+@implementation PublicacionTableViewController{
+    //UITabGestureRecognizer *tap;
+    ObjectDataMaper *odm;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -35,6 +41,8 @@
     self.caracteres.text=[NSString stringWithFormat:@"%d",CARACTERES];
     //Con esta linea de codigo nuestro componente grafico ya esta siendo reconocido por una clase.
     self.txtEstado.delegate = self;
+    
+    odm=[[ObjectDataMaper alloc] init];
 }
 
 
@@ -79,7 +87,26 @@
 
 #pragma mark- IBAction
 
--(IBAction)publicar:(UIButton *)sender{
+-(IBAction)publicar:(id)sender{
+    NSDictionary *obj=@{
+                        @"autor": @"Tecnologer",
+                        @"mensaje": self.txtEstado.text,
+                        @"latitud": @"24.7862507",
+                        @"longitud": @"-107.3995696"
+                        };
+    
+    //guardar en CoreData
+    if(![odm guardarPublicacion:obj]){
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Aqui fue donde la puerca torcio el rabo." delegate: nil cancelButtonTitle: @"OK" otherButtonTitles:nil,nil];
+        [alert show];
+    }
+    
+    self.txtEstado.text=@"";
+    self.caracteres.text=[NSString stringWithFormat:@"%d",CARACTERES];
+
+}
+
+-(IBAction)publicarDos:(UIButton *)sender{
     NSUserDefaults *ud;
     ud=[NSUserDefaults standardUserDefaults];
     

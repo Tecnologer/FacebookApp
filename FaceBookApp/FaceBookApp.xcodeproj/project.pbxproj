@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B387882619BB631F00B21CD9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B387882419BB631F00B21CD9 /* Model.xcdatamodeld */; };
+		B387882A19BB651400B21CD9 /* Publicacion.m in Sources */ = {isa = PBXBuildFile; fileRef = B387882919BB651400B21CD9 /* Publicacion.m */; };
+		B387882D19BB671800B21CD9 /* ObjectDataMaper.m in Sources */ = {isa = PBXBuildFile; fileRef = B387882C19BB671800B21CD9 /* ObjectDataMaper.m */; };
 		B389C47E19B2543300B57E1D /* amigoUICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B389C47D19B2543300B57E1D /* amigoUICollectionViewCell.m */; };
 		B389C48119B2556400B57E1D /* AmigoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B389C48019B2556400B57E1D /* AmigoViewController.m */; };
 		B3F19C6319B22A21001FDE45 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F19C6219B22A21001FDE45 /* GoogleMaps.framework */; };
@@ -55,6 +58,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B387882519BB631F00B21CD9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B387882819BB651400B21CD9 /* Publicacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Publicacion.h; sourceTree = "<group>"; };
+		B387882919BB651400B21CD9 /* Publicacion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Publicacion.m; sourceTree = "<group>"; };
+		B387882B19BB671800B21CD9 /* ObjectDataMaper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectDataMaper.h; sourceTree = "<group>"; };
+		B387882C19BB671800B21CD9 /* ObjectDataMaper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectDataMaper.m; sourceTree = "<group>"; };
 		B389C47C19B2543300B57E1D /* amigoUICollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amigoUICollectionViewCell.h; sourceTree = "<group>"; };
 		B389C47D19B2543300B57E1D /* amigoUICollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amigoUICollectionViewCell.m; sourceTree = "<group>"; };
 		B389C47F19B2556400B57E1D /* AmigoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmigoViewController.h; sourceTree = "<group>"; };
@@ -140,6 +148,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B387882719BB64A500B21CD9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B387882819BB651400B21CD9 /* Publicacion.h */,
+				B387882919BB651400B21CD9 /* Publicacion.m */,
+				B387882B19BB671800B21CD9 /* ObjectDataMaper.h */,
+				B387882C19BB671800B21CD9 /* ObjectDataMaper.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		D103ED7B199FB23E00E6FB6A = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +207,7 @@
 		D103ED8D199FB23E00E6FB6A /* FaceBookApp */ = {
 			isa = PBXGroup;
 			children = (
+				B387882719BB64A500B21CD9 /* Models */,
 				D103ED96199FB23E00E6FB6A /* AppDelegate.h */,
 				D103ED97199FB23E00E6FB6A /* AppDelegate.m */,
 				D103ED99199FB23E00E6FB6A /* Main_iPhone.storyboard */,
@@ -206,6 +226,7 @@
 				B389C47D19B2543300B57E1D /* amigoUICollectionViewCell.m */,
 				B389C47F19B2556400B57E1D /* AmigoViewController.h */,
 				B389C48019B2556400B57E1D /* AmigoViewController.m */,
+				B387882419BB631F00B21CD9 /* Model.xcdatamodeld */,
 			);
 			path = FaceBookApp;
 			sourceTree = "<group>";
@@ -350,9 +371,12 @@
 				D103ED94199FB23E00E6FB6A /* main.m in Sources */,
 				D103EDC4199FC17400E6FB6A /* TimeLineTableViewController.m in Sources */,
 				B389C48119B2556400B57E1D /* AmigoViewController.m in Sources */,
+				B387882619BB631F00B21CD9 /* Model.xcdatamodeld in Sources */,
 				B389C47E19B2543300B57E1D /* amigoUICollectionViewCell.m in Sources */,
 				B3F19C8219B233D0001FDE45 /* UbicacionViewController.m in Sources */,
 				D1D7FDDB19A9090500C39C5D /* PublicacionTableViewController.m in Sources */,
+				B387882A19BB651400B21CD9 /* Publicacion.m in Sources */,
+				B387882D19BB671800B21CD9 /* ObjectDataMaper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +613,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B387882419BB631F00B21CD9 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B387882519BB631F00B21CD9 /* Model.xcdatamodel */,
+			);
+			currentVersion = B387882519BB631F00B21CD9 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D103ED7C199FB23E00E6FB6A /* Project object */;
 }

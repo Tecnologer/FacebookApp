@@ -1,0 +1,48 @@
+
+/* Class = "IBUINavigationItem"; title = "Mapa"; ObjectID = "3kL-Hz-L3K"; */
+"3kL-Hz-L3K.title" = "Mapa";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Opciones..."; ObjectID = "8bR-NL-Sax"; */
+"8bR-NL-Sax.headerTitle" = "Opciones...";
+
+/* Class = "IBUILabel"; text = "Ubicación"; ObjectID = "EpP-8t-TES"; */
+"EpP-8t-TES.text" = "Ubicación";
+
+/* Class = "IBUILabel"; text = "0"; ObjectID = "NzW-h9-G7c"; */
+"NzW-h9-G7c.text" = "0";
+
+/* Class = "IBUITextView"; text = "Mensaje de la publicación"; ObjectID = "OIr-9T-0fp"; */
+"OIr-9T-0fp.text" = "Mensaje de la publicación";
+
+/* Class = "IBUINavigationItem"; title = "Publicacion"; ObjectID = "P0T-xl-AXe"; */
+"P0T-xl-AXe.title" = "Publicacion";
+
+/* Class = "IBUINavigationItem"; title = "Publicacion"; ObjectID = "RuI-Ng-N1R"; */
+"RuI-Ng-N1R.title" = "Publicacion";
+
+/* Class = "IBUIBarButtonItem"; title = "Vista Satélite"; ObjectID = "Tno-PE-0sF"; */
+"Tno-PE-0sF.title" = "Vista Satélite";
+
+/* Class = "IBUITextField"; placeholder = "Escriba aqui..."; ObjectID = "UcL-ue-R9p"; */
+"UcL-ue-R9p.placeholder" = "Escriba aqui...";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "gue-DI-XnF"; */
+"gue-DI-XnF.text" = "Title";
+
+/* Class = "IBUILabel"; text = "¿Con quién?"; ObjectID = "mCe-Du-4RH"; */
+"mCe-Du-4RH.text" = "¿Con quién?";
+
+/* Class = "IBUILabel"; text = "¿Como te sientes?"; ObjectID = "qIk-hc-Tdi"; */
+"qIk-hc-Tdi.text" = "¿Como te sientes?";
+
+/* Class = "IBUILabel"; text = "Nombre"; ObjectID = "rw3-l4-20s"; */
+"rw3-l4-20s.text" = "Nombre";
+
+/* Class = "IBUINavigationItem"; title = "TimeLine"; ObjectID = "rww-sw-r3e"; */
+"rww-sw-r3e.title" = "TimeLine";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "sXE-of-GJ6"; */
+"sXE-of-GJ6.text" = "Subtitle";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "yQc-rs-5bO"; */
+"yQc-rs-5bO.text" = "Label";
