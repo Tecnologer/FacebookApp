@@ -21,4 +21,6 @@
 
 -(NSMutableArray *)obtenerPublicaciones;
 
+-(BOOL)eliminarPublicacion:(NSManagedObjectID *)objectID;
+
 @end

@@ -88,21 +88,29 @@
 #pragma mark- IBAction
 
 -(IBAction)publicar:(id)sender{
-    NSDictionary *obj=@{
+    
+    if(![self.txtEstado.text isEqualToString:@""])
+    {
+        NSDictionary *obj=@{
                         @"autor": @"Tecnologer",
                         @"mensaje": self.txtEstado.text,
-                        @"latitud": @"24.7",
-                        @"longitud": @"-107.3"
+                        @"latitud": @"24.7862507",
+                        @"longitud": @"-107.3995696"
                         };
     
-    //guardar en CoreData
-    if(![odm guardarPublicacion:obj]){
-        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Aqui fue donde la puerca torcio el rabo." delegate: nil cancelButtonTitle: @"OK" otherButtonTitles:nil,nil];
+        //guardar en CoreData
+        if(![odm guardarPublicacion:obj]){
+            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Aqui fue donde la puerca torcio el rabo." delegate: nil cancelButtonTitle: @"OK" otherButtonTitles:nil,nil];
+            [alert show];
+        }
+    
+        self.txtEstado.text=@"";
+            self.caracteres.text=[NSString stringWithFormat:@"%d",CARACTERES];
+    }
+    else{
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"No seas bruto" message:@"Escribe algo" delegate: nil cancelButtonTitle: @"Ta'Wueno" otherButtonTitles:nil,nil];
         [alert show];
     }
-    
-    self.txtEstado.text=@"";
-    self.caracteres.text=[NSString stringWithFormat:@"%d",CARACTERES];
 
 }
 

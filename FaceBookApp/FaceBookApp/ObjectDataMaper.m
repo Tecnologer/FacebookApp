@@ -23,8 +23,8 @@
     
     pub.mensaje=[publicacion  objectForKey:@"mensaje"];
     pub.autor=[publicacion  objectForKey:@"autor"];
-    pub.latitud=[[publicacion  objectForKey:@"latitud"] doubleValue];
-    pub.longitud=[[publicacion  objectForKey:@"longitud"] doubleValue];
+    pub.latitud=[publicacion  objectForKey:@"latitud"];
+    pub.longitud=[publicacion  objectForKey:@"longitud"];
     
     [self.context save:&error];
     
@@ -53,10 +53,11 @@
     NSDictionary *obj;
     for (Publicacion *pub in pubs) {
         obj=@{
+                @"id":[pub objectID],
                 @"mensaje":pub.mensaje,
                 @"autor":pub.autor,
-                @"latitud":[NSString stringWithFormat:@"%f", pub.latitud],
-                @"longitud":[NSString stringWithFormat:@"%f", pub.longitud]
+                @"latitud":pub.latitud,
+                @"longitud":pub.longitud
                 };
         
         [result addObject:obj];
@@ -65,4 +66,26 @@
     return result;
 }
 
+-(BOOL)eliminarPublicacion:(NSManagedObjectID *)objectID{
+    NSError *error;
+    self.request=[[NSFetchRequest alloc] init];
+    self.appDelegate=[[UIApplication sharedApplication] delegate];
+    self.context=[self.appDelegate managedObjectContext];
+    
+    [self.request setEntity:[NSEntityDescription entityForName:@"Publicaciones" inManagedObjectContext:self.context]];
+    
+    //predicsdo para hacer consulta al core data, es equivalente al WHERE de SQL
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF == %@", objectID];
+    [self.request setPredicate:predicate];
+    
+    
+    [self.context deleteObject:[[self.context executeFetchRequest:self.request error:&error] lastObject]];
+    
+    [self.context save:&error];
+    
+    if(error!=nil)
+        return NO;
+    
+    return YES;
+}
 @end

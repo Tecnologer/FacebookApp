@@ -149,6 +149,32 @@
     //return 0;
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if(editingStyle==UITableViewCellEditingStyleDelete){
+        
+        //obtenemos la publicacion usando el numero de celda que estamos eliminando
+        NSDictionary *pub=[publicaciones objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        
+        NSManagedObjectID *objectID=[pub objectForKey:@"id"];
+        
+        //ejecutamos eliminar publicacion, si no se elimina de la base de datos, manda un alert
+        if(![odm eliminarPublicacion:(NSManagedObjectID *) objectID]){
+            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Error al eliminar publicacion" delegate: nil cancelButtonTitle: @"OK" otherButtonTitles:nil,nil];
+            [alert show];
+
+        }
+        else{
+            [publicaciones removeObjectAtIndex:indexPath.row];
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView reloadData];
+        }
+    }
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

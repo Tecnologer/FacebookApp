@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) NSString *mensaje;
 @property (strong, nonatomic) NSString *autor;
-@property (assign, nonatomic) double latitud;
-@property (assign, nonatomic) double longitud;
+@property (strong, nonatomic) NSString *latitud;
+@property (strong, nonatomic) NSString *longitud;
 
 @end
