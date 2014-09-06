@@ -91,8 +91,8 @@
     NSDictionary *obj=@{
                         @"autor": @"Tecnologer",
                         @"mensaje": self.txtEstado.text,
-                        @"latitud": @"24.7862507",
-                        @"longitud": @"-107.3995696"
+                        @"latitud": @"24.7",
+                        @"longitud": @"-107.3"
                         };
     
     //guardar en CoreData
