@@ -8,6 +8,7 @@
 
 #import "TimeLineTableViewController.h"
 #import "DetallePublicacionTableViewController.h"
+#import "ObjectDataMaper.h"
 
 @interface TimeLineTableViewController ()
 
@@ -17,6 +18,7 @@
     
     //Variable de instancia.
     NSMutableArray *publicaciones;
+    ObjectDataMaper *odm;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -80,6 +82,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    odm=[[ObjectDataMaper alloc] init];
 }
 
 //Agregado Manual.
@@ -101,10 +105,19 @@
 
 //Agregado Manual.
 //Antes de que se muestre la pantalla, y se cargaron las configuraciones.
-- (void) viewWillAppear:(BOOL)animated{
+/*- (void) viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
 
+}*/
+
+- (void) viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    publicaciones=[odm obtenerPublicaciones];
+    [self.tableView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning
