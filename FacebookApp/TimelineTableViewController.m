@@ -201,7 +201,7 @@
     
     // obtenemos los elementos del arreglo con las publicaciones accediendo con un indice, que nos proporciona el row de indexPath
     NSMutableDictionary *obj = [publicaciones objectAtIndex:indexPath.row];
-    
+    NSLog(@"%@",obj);
     // mostramos los valores del objeto por medio de la llave que asignamos y mostramos en los label de la celda
     cell.textLabel.text = [obj objectForKey:@"message"];
     

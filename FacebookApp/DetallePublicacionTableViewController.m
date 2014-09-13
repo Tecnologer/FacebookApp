@@ -50,12 +50,12 @@
     [super viewWillAppear:animated];
     editando = NO;
     
-    if([[[self.publicacion objectForKey:@"user"] objectForKey:@"_id"] isEqualToString:@"541467311f3c2a0000b017e8"]){
-        [self.navigationController.navigationItem.rightBarButtonItem setEnabled:YES];
+    if([[[self.publicacion objectForKey:@"user"] objectForKey:@"_id"] isEqualToString:@"54149b2996752e0000654bc5"]){
+        [self.navigationItem.rightBarButtonItem setEnabled:YES];
         
     }
     else{
-        [self.navigationController.navigationItem.rightBarButtonItem setEnabled:NO];
+        [self.navigationItem.rightBarButtonItem setEnabled:NO];
     }
 }
 

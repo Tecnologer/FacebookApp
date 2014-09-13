@@ -101,7 +101,7 @@
 #pragma mark - IBAction
 - (IBAction)publicar:(id)sender {
     NSDictionary *obj = @{
-                          @"user": @"541467311f3c2a0000b017e8",
+                          @"user": @"54149b2996752e0000654bc5",
                           @"message": self.txtEstado.text
                         };
     dispatch_queue_t queue= dispatch_queue_create("publicationQueue", nil);
@@ -126,7 +126,7 @@
 
             }
             else{
-                alert.title=@"Error";
+                alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[response objectForKey:@"message"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
             }
             
             [alert show];
