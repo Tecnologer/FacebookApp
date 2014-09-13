@@ -8,6 +8,9 @@
 
 #import "PublicacionTableViewController.h"
 #import "ObjectDataMaper.h"
+#import "WebServices.h"
+
+
 
 // un macro es una buena práctica para crear constantes, aunque oficialmente no son las constantes en Objective-C
 // un macro puede contener cualquier cosa, una función, un objeto, cualquier valor
@@ -96,8 +99,44 @@
 }
 
 #pragma mark - IBAction
-
 - (IBAction)publicar:(id)sender {
+    NSDictionary *obj = @{
+                          @"user": @"541467311f3c2a0000b017e8",
+                          @"message": self.txtEstado.text
+                        };
+    dispatch_queue_t queue= dispatch_queue_create("publicationQueue", nil);
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enviando publicacion" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
+    [alert show];
+    dispatch_async(queue, ^{
+        NSDictionary *response= [WebServices sendPublication:obj];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [alert dismissWithClickedButtonIndex:0 animated:YES];
+
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Publicacion enviada" message:[response objectForKey:@"message"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            
+            if([[response objectForKey:@"succes"] boolValue])
+            {
+                // fin del guardado
+                self.txtEstado.text = @"";
+                self.caracteres.text = [NSString stringWithFormat:@"%d", CARACTERES];
+                self.caracteres.textColor = [[UIColor alloc] initWithRed:69.0/255 green:97.0/255 blue:157.0/255 alpha:1];
+                [self.txtEstado resignFirstResponder];
+
+            }
+            else{
+                alert.title=@"Error";
+            }
+            
+            [alert show];
+        });
+    });
+    
+  
+}
+
+- (IBAction)publicarTres:(id)sender {
     NSDictionary *obj = @{
                           @"autor": @"Jesús Ruiz",
                           @"mensaje": self.txtEstado.text,

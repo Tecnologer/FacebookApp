@@ -45,6 +45,7 @@
 		94D4658819BB64F500F85D86 /* Publicacion.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D4658719BB64F500F85D86 /* Publicacion.m */; };
 		94D4658B19BB670D00F85D86 /* ObjectDataMaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D4658A19BB670D00F85D86 /* ObjectDataMaper.m */; };
 		94D55F0119A90903009699EA /* PublicacionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D55F0019A90903009699EA /* PublicacionTableViewController.m */; };
+		B3F5FCE619C49C3F007425A8 /* WebServices.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F5FCE519C49C3F007425A8 /* WebServices.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		94D4658A19BB670D00F85D86 /* ObjectDataMaper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectDataMaper.m; sourceTree = "<group>"; };
 		94D55EFF19A90903009699EA /* PublicacionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicacionTableViewController.h; sourceTree = "<group>"; };
 		94D55F0019A90903009699EA /* PublicacionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicacionTableViewController.m; sourceTree = "<group>"; };
+		B3F5FCE419C49C3F007425A8 /* WebServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServices.h; sourceTree = "<group>"; };
+		B3F5FCE519C49C3F007425A8 /* WebServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServices.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +219,8 @@
 				94757A2119B25565002F9590 /* AmigosViewController.h */,
 				94757A2219B25565002F9590 /* AmigosViewController.m */,
 				94D4658219BB631900F85D86 /* FacebookApp.xcdatamodeld */,
+				B3F5FCE419C49C3F007425A8 /* WebServices.h */,
+				B3F5FCE519C49C3F007425A8 /* WebServices.m */,
 			);
 			path = FacebookApp;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 				94757A2019B25424002F9590 /* AmigoCell.m in Sources */,
 				94D55F0119A90903009699EA /* PublicacionTableViewController.m in Sources */,
 				94D4658819BB64F500F85D86 /* Publicacion.m in Sources */,
+				B3F5FCE619C49C3F007425A8 /* WebServices.m in Sources */,
 				94D4658B19BB670D00F85D86 /* ObjectDataMaper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

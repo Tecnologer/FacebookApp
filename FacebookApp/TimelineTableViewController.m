@@ -11,6 +11,7 @@
 // Si se pone el .m hay error en compilación
 // y se van a llevar su primer dolor de cabeza buscando que es :(
 #import "DetallePublicacionTableViewController.h"
+#import "WebServices.h"
 
 @interface TimelineTableViewController ()
 
@@ -20,6 +21,8 @@
     // Esta variable puede ser accedida en toda la clase (global)
     NSMutableArray *publicaciones;
     ObjectDataMaper *odm;
+    
+    UIRefreshControl *refreshControl;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -36,11 +39,16 @@
 {
     [super viewDidLoad];
     
+    refreshControl=[[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(loadPublication) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+    
     odm = [[ObjectDataMaper alloc] init];
     
     // Aquí se crea la instancia de la variable
     // Xcode pone de otro color las variables globales de la clase
     publicaciones = [[NSMutableArray alloc] init];
+    
 
     /*
      Lo mismo que arriba
@@ -99,11 +107,28 @@
 }
  */
 
+-(void)loadPublication{
+    NSDictionary *response=[WebServices getPublication];
+    
+    if([[response objectForKey:@"success"] boolValue])
+        publicaciones=[response objectForKey:@"publications"];
+    else{
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:[response objectForKey:@"message"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    
+    [refreshControl endRefreshing];
+    [self.tableView reloadData];
+    
+        
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    publicaciones = [odm obtenerPublicaciones];
+    //publicaciones = [odm obtenerPublicaciones];
+    [self loadPublication];
     self.navigationController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", [publicaciones count]];
-    [self.tableView reloadData];
+    
 }
 
 
@@ -178,8 +203,16 @@
     NSMutableDictionary *obj = [publicaciones objectAtIndex:indexPath.row];
     
     // mostramos los valores del objeto por medio de la llave que asignamos y mostramos en los label de la celda
-    cell.textLabel.text = [obj objectForKey:@"mensaje"];
-    cell.detailTextLabel.text = [obj objectForKey:@"autor"];
+    cell.textLabel.text = [obj objectForKey:@"message"];
+    
+    NSString *name;
+    if([[obj objectForKey:@"edited"] boolValue]){
+        name=[NSString stringWithFormat:@"%@ - Editado",[[obj objectForKey:@"user"] objectForKey:@"username"]];
+    }
+    else{
+        name=[[obj objectForKey:@"user"] objectForKey:@"username"];
+    }
+    cell.detailTextLabel.text =name;
     
     return cell;
 }

@@ -8,6 +8,7 @@
 
 #import "DetallePublicacionTableViewController.h"
 #import "ObjectDataMaper.h"
+#import "WebServices.h"
 
 @interface DetallePublicacionTableViewController ()
 
@@ -35,8 +36,8 @@
     // muestro el contenido del objeto publicación del timeline
     // en las propieades label y textview
     
-    self.lblAutor.text = [self.publicacion objectForKey:@"autor"];
-    self.textMensaje.text = [self.publicacion objectForKey:@"mensaje"];
+    self.lblAutor.text = [[self.publicacion objectForKey:@"user"] objectForKey:@"username"];
+    self.textMensaje.text = [self.publicacion objectForKey:@"message"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -48,6 +49,14 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     editando = NO;
+    
+    if([[[self.publicacion objectForKey:@"user"] objectForKey:@"_id"] isEqualToString:@"541467311f3c2a0000b017e8"]){
+        [self.navigationController.navigationItem.rightBarButtonItem setEnabled:YES];
+        
+    }
+    else{
+        [self.navigationController.navigationItem.rightBarButtonItem setEnabled:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,11 +104,38 @@
         
         // el error al editar, es que no estabamos actualizando la información y no se veía reflejado el cambio, error tonto
         NSDictionary *pubActualizada = @{
-                                         @"id": [self.publicacion objectForKey:@"id"],
-                                         @"autor": [self.publicacion objectForKey:@"autor"],
-                                         @"mensaje": self.textMensaje.text,
-                                         @"latitud": [self.publicacion objectForKey:@"latitud"],
-                                         @"longitud": [self.publicacion objectForKey:@"longitud"]
+                                         @"_id":[self.publicacion objectForKey:@"_id"],
+                                         @"message": self.textMensaje.text
+                                         };
+        
+        NSDictionary *response=[WebServices editPublication:pubActualizada];
+        
+        if(![[response objectForKey:@"success"] boolValue])
+        {
+            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:[response objectForKey:@"message"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }
+    else {
+        editando = YES;
+        self.navigationItem.rightBarButtonItem.title = @"Guardar";
+    }
+    
+    [self.textMensaje setEditable:editando];
+    [self.textMensaje setSelectable:editando];
+    [self.textMensaje becomeFirstResponder];
+    self.textMensaje.selectedRange = NSMakeRange([self.textMensaje.text length], 0);
+}
+
+- (IBAction)editarPublicacion2:(id)sender {
+    if (editando) {
+        editando = NO;
+        self.navigationItem.rightBarButtonItem.title = @"Editar";
+        
+        // el error al editar, es que no estabamos actualizando la información y no se veía reflejado el cambio, error tonto
+        NSDictionary *pubActualizada = @{
+                                         @"user": [[self.publicacion objectForKey:@"user"] objectForKey:@"username"],
+                                         @"message": self.textMensaje.text
                                          };
         
         // método para actualizar
